@@ -28,5 +28,12 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div id="root"></div>
+        </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="{{ asset('js/front.js') }}"></script>
 @endsection
