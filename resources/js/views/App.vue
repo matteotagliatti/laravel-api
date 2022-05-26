@@ -1,14 +1,20 @@
 <template>
     <div>
         <h1>Hi i'm Vue!</h1>
-        <div></div>
+        <div class="grid">
+            <Post v-for="(post, index) in posts" :key="index" :post="post" />
+        </div>
     </div>
 </template>
 
 <script>
+import Post from "../components/Post.vue";
+
 export default {
     name: "App",
-    components: {},
+    components: {
+        Post,
+    },
     data() {
         return {
             posts: [],
@@ -33,4 +39,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+</style>
